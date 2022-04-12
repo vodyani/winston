@@ -27,7 +27,13 @@ export class BaseLogger implements LoggerService {
 
   @FixedContext
   public info(data: any, source?: string) {
-    this.instance.info({ source: this.getSource(source), data });
+    if (
+      source !== 'RoutesResolver'
+      && source !== 'RouterExplorer'
+      && source !== 'NestApplication'
+    ) {
+      this.instance.info({ source: this.getSource(source), data });
+    }
   }
 
   @FixedContext
