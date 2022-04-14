@@ -43,7 +43,9 @@ export class BaseLogger implements LoggerService {
 
   @FixedContext
   public error(error: Error, source: string, data?: any) {
-    this.instance.error({ source: this.getSource(source), data, ...error });
+    const { name, stack, message } = error;
+    const exception = { message, name, stack };
+    this.instance.error({ source: this.getSource(source), data, exception });
   }
 
   @FixedContext
