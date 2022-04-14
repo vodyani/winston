@@ -7,9 +7,9 @@ export interface LevelConfig {
 export interface BaseLoggerOptions {
   env: string;
   name: string;
-  rotateFileLevel: LevelConfig;
   enableRotateLog?: boolean;
   enableConsoleLog?: boolean;
   rotateFileDirPath?: string;
+  rotateFileLevel?: LevelConfig;
   rotateFileOptions?: DailyRotateFileTransportOptions;
 }
