@@ -77,7 +77,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^8.4.4",
-    "@vodyani/core": "^0.2.30",
+    "@vodyani/core": "^0.3.2",
     "winston": "^3.6.0",
     "winston-daily-rotate-file": "^4.6.1"
   },
