@@ -17,7 +17,7 @@ export class BaseLogger implements LoggerService {
 
     this.instance = createLogger(winstonOptions);
 
-    this.name = getDefaultString(options.name, 'BaseLogger');
+    this.name = getDefaultString(options.name, 'FROM_BASE_LOGGER');
   }
 
   @FixedContext
@@ -27,13 +27,7 @@ export class BaseLogger implements LoggerService {
 
   @FixedContext
   public info(data: any, source?: string) {
-    if (
-      source !== 'RoutesResolver'
-      && source !== 'RouterExplorer'
-      && source !== 'NestApplication'
-    ) {
-      this.instance.info({ source: this.getSource(source), data });
-    }
+    this.instance.info({ source: this.getSource(source), data });
   }
 
   @FixedContext
@@ -42,10 +36,10 @@ export class BaseLogger implements LoggerService {
   }
 
   @FixedContext
-  public error(error: Error, source: string, data?: any) {
+  public error(error: Error, source?: string, extra?: any) {
     const { name, stack, message } = error;
-    const exception = { message, name, stack };
-    this.instance.error({ source: this.getSource(source), data, exception });
+    const data = { name, stack, message, extra };
+    this.instance.error({ source: this.getSource(source), data });
   }
 
   @FixedContext

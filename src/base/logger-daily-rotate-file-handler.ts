@@ -59,7 +59,7 @@ export class LoggerDailyRotateFileHandler {
 
     Object.keys(this.rotateFileLevel).forEach(key => {
       const item = this.rotateFileLevel[key];
-      const filename = `%DATE%-${this.name}_${process.pid}.${key}.log`;
+      const filename = `%DATE%-${this.name}.${key}.log`;
 
       item.forEach(level => {
         const logger = new DailyRotateFile({
