@@ -1,7 +1,7 @@
-import * as DailyRotateFile from 'winston-daily-rotate-file';
-import { FixedContext, isValidObject, isValidString } from '@vodyani/core';
+import { FixedContext } from '@vodyani/core';
+import { isValidObject, isValidString } from '@vodyani/validator';
 
-import { LevelConfig } from '../common';
+import { LevelConfig, DailyRotateFile } from '../common';
 
 import { LoggerFormatHandler } from './logger-format-handler';
 

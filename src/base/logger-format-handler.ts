@@ -1,5 +1,6 @@
 import { format, Logform } from 'winston';
-import { FixedContext, toStringify, isValidObject } from '@vodyani/core';
+import { isValidObject } from '@vodyani/validator';
+import { FixedContext, toStringify } from '@vodyani/core';
 
 export class LoggerFormatHandler {
   constructor(

@@ -1,6 +1,7 @@
+import { FixedContext } from '@vodyani/core';
 import { LoggerService } from '@nestjs/common';
 import { Logger, createLogger } from 'winston';
-import { FixedContext, getDefault, getDefaultString } from '@vodyani/core';
+import { getDefaultString, getDefault } from '@vodyani/transformer';
 
 import { BaseLoggerOptions } from '../common';
 
