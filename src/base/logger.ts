@@ -1,7 +1,7 @@
 import { FixedContext } from '@vodyani/core';
 import { LoggerService } from '@nestjs/common';
 import { Logger, createLogger } from 'winston';
-import { getDefaultString, getDefault } from '@vodyani/transformer';
+import { convert, convertString } from '@vodyani/transformer';
 
 import { BaseLoggerOptions } from '../common';
 
@@ -18,7 +18,7 @@ export class BaseLogger implements LoggerService {
 
     this.instance = createLogger(winstonOptions);
 
-    this.name = getDefaultString(options.name, 'FROM_BASE_LOGGER');
+    this.name = convertString(options.name, 'FROM_BASE_LOGGER');
   }
 
   @FixedContext
@@ -78,6 +78,6 @@ export class BaseLogger implements LoggerService {
 
   @FixedContext
   private getSource(source?: string) {
-    return getDefault(source, this.name);
+    return convert(source, this.name);
   }
 }

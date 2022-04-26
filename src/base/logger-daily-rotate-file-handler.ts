@@ -1,5 +1,4 @@
 import { FixedContext } from '@vodyani/core';
-import { isValidObject, isValidString } from '@vodyani/validator';
 
 import { LevelConfig, DailyRotateFile } from '../common';
 
@@ -22,11 +21,11 @@ export class LoggerDailyRotateFileHandler {
 
   @FixedContext
   private validateParam() {
-    if (!isValidObject(this.rotateFileLevel)) {
+    if (!this.rotateFileLevel) {
       throw new Error('To enable local file logging you must specify the level config!');
     }
 
-    if (!isValidString(this.rotateFileDirPath)) {
+    if (!this.rotateFileDirPath) {
       throw new Error('To enable local file logging you must specify the log output directory!');
     }
 
@@ -49,7 +48,7 @@ export class LoggerDailyRotateFileHandler {
     let datePattern = 'YYYY-MM-DD-HH';
     let errorLogger: DailyRotateFile = null;
 
-    if (isValidObject(this.options)) {
+    if (this.options) {
       datePattern = this.options.datePattern;
       maxFiles = this.options.maxFiles as any;
       zippedArchive = this.options.zippedArchive;

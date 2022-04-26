@@ -1,5 +1,4 @@
 import { format, Logform } from 'winston';
-import { isValidObject } from '@vodyani/validator';
 import { FixedContext, toStringify } from '@vodyani/core';
 
 export class LoggerFormatHandler {
@@ -35,7 +34,7 @@ export class LoggerFormatHandler {
     const { data, source } = info.message as unknown as { source: string, data?: any };
 
     if (this.enableConsoleLog) {
-      const message = isValidObject(data) ? toStringify(data) : data;
+      const message = data ? toStringify(data) : data;
       const output = `[${this.name}] - ${info.timestamp} [${this.env}-${process.pid}] ${level}`;
 
       return level === 'error'
