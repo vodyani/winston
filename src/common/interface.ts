@@ -1,15 +1,22 @@
 import { DailyRotateFileTransportOptions } from 'winston-daily-rotate-file';
 
-export interface LevelConfig {
-  [key: string]: ('log' | 'info' | 'warn' | 'error')[];
+export interface LevelDict {
+  [key: string]: ('log' | 'info' | 'debug' | 'warn' | 'error')[];
+  error: 'error'[]
 }
 
-export interface BaseLoggerOptions {
+export interface LoggerCreateOptions {
   env: string;
   name: string;
-  enableRotateLog?: boolean;
-  enableConsoleLog?: boolean;
-  rotateFileDirPath?: string;
-  rotateFileLevel?: LevelConfig;
-  rotateFileOptions?: DailyRotateFileTransportOptions;
+  enableFile: boolean;
+  enableConsole: boolean;
+  fileLevelDict?: LevelDict;
+  fileNameCallback?: (fileKey: string) => string;
+  fileTransportOptions?: DailyRotateFileTransportOptions;
+}
+
+export interface LoggerFormatOptions {
+  env: string;
+  name: string;
+  isConsole: boolean;
 }
