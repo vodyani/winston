@@ -2,7 +2,6 @@ import { DailyRotateFileTransportOptions } from 'winston-daily-rotate-file';
 
 export interface LevelDict {
   [key: string]: ('log' | 'info' | 'debug' | 'warn' | 'error')[];
-  error: 'error'[]
 }
 
 export interface LoggerCreateOptions {

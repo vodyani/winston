@@ -22,16 +22,17 @@ export class LoggerFactory {
       handleExceptions: true,
       handleRejections: true,
       transports: [] as any[],
-      exceptionHandlers: null as any,
-      rejectionHandlers: null as any,
+      exceptionHandlers: [] as any[],
+      rejectionHandlers: [] as any[],
     };
 
     const builder = new LoggerBuilder();
 
     if (enableConsole) {
       const transport = builder.assembleConsole(env, name);
-      loggerOptions.exceptionHandlers = transport;
-      loggerOptions.rejectionHandlers = transport;
+
+      loggerOptions.exceptionHandlers.push(transport);
+      loggerOptions.rejectionHandlers.push(transport);
       loggerOptions.transports.push(transport);
     }
 
@@ -45,12 +46,15 @@ export class LoggerFactory {
 
       Object.keys(dict).forEach(key => {
         dict[key].forEach(level => {
-          fileTransportOptions.filename = fileNameCallback(key);
+          fileTransportOptions.filename = fileNameCallback
+            ? fileNameCallback(key)
+            : `%DATE%-${name}.${key}.log`;
+
           const transport = builder.assembleFile(env, name, level, fileTransportOptions);
 
-          if (key === 'error' && level === 'error') {
-            loggerOptions.exceptionHandlers = transport;
-            loggerOptions.rejectionHandlers = transport;
+          if (level === 'error') {
+            loggerOptions.exceptionHandlers.push(transport);
+            loggerOptions.rejectionHandlers.push(transport);
           }
 
           loggerOptions.transports.push(transport);

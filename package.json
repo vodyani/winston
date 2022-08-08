@@ -68,7 +68,7 @@
     "@types/jest": "27.4.1",
     "@types/node": "16.11.26",
     "@types/supertest": "2.0.11",
-    "@vodyani/eslint-config": "^1.0.9",
+    "@vodyani/eslint-config": "^1.0.10",
     "husky": "7.0.4",
     "jest": "27.5.1",
     "supertest": "6.2.2",
@@ -77,9 +77,9 @@
   },
   "dependencies": {
     "@vodyani/core": "^8.4.13",
+    "@vodyani/transformer": "^0.6.1",
     "@vodyani/utils": "^1.4.2",
     "@vodyani/validator": "^0.14.0",
-    "@vodyani/transformer": "^0.6.1",
     "winston": "^3.8.1",
     "winston-daily-rotate-file": "4.6.1"
   },
