@@ -19,10 +19,13 @@ describe('LoggerFactory', () => {
       },
     });
 
-    // logger.log('log input');
-    // logger.info('info input');
-    // logger.warn('warn input');
-    // logger.debug('debug input');
-    logger.error(new Error('error'), 'error input');
+    const error = new Error('I\'m Error 😏');
+
+    logger.log('log input');
+    logger.info('info input');
+    logger.warn('warn input');
+    logger.debug({ tag: 'From Test LoggerFactory' });
+    logger.error(error, { tag: 'From Test LoggerFactory' });
+    logger.error(new Error('No extra Error'));
   });
 });

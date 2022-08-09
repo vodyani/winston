@@ -9,35 +9,34 @@ export class BaseLogger {
   }
 
   @This
-  public log(message: any) {
-    this.instance.info(message);
+  public log(data: any) {
+    this.instance.info({ data, isError: false });
   }
 
   @This
-  public info(message: any) {
-    this.instance.info(message);
+  public info(data: any) {
+    this.instance.info({ data, isError: false });
   }
 
   @This
-  public warn(message: any) {
-    this.instance.warn(message);
+  public warn(data: any) {
+    this.instance.warn({ data, isError: false });
   }
 
   @This
-  public debug(message: any) {
-    this.instance.debug(message);
+  public debug(data: any) {
+    this.instance.debug({ data, isError: false });
   }
 
   @This
   public error(error: Error, extra = Object()) {
-    const message = {
+    const data = {
       extra,
       name: error.name,
       message: error.message,
       stack: error.stack,
-      cause: error.cause,
     };
 
-    this.instance.error(message);
+    this.instance.error({ data, isError: true });
   }
 }

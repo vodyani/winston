@@ -15,6 +15,11 @@ export interface LogLevelDict {
   [key: string]: 'info' | 'debug' | 'warn' | 'error';
 }
 
+export interface LogMessage {
+  data: any;
+  isError: boolean;
+}
+
 export interface CreateOptions extends LoggerOptions {
   env: string;
   name: string;
