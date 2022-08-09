@@ -1,5 +1,4 @@
 export * from './common';
-export * from './logger-builder';
-export * from './logger-factory';
-export * from './logger-formatter';
+export * from './factory';
+export * from './formatter';
 export * from './logger';

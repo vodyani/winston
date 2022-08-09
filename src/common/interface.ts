@@ -1,21 +1,25 @@
+import { Logform, LoggerOptions, transports } from 'winston';
 import { DailyRotateFileTransportOptions } from 'winston-daily-rotate-file';
 
-export interface LevelDict {
-  [key: string]: ('log' | 'info' | 'debug' | 'warn' | 'error')[];
+import { Transport } from './declare';
+
+export interface LogFormatter {
+  build: (name: string, env: string) => Logform.Format;
 }
 
-export interface LoggerCreateOptions {
+export interface LogTransport {
+  build: (name: string, env: string, level: string, options?: Transport.TransportStreamOptions) => Transport;
+}
+
+export interface LogLevelDict {
+  [key: string]: 'info' | 'debug' | 'warn' | 'error';
+}
+
+export interface CreateOptions extends LoggerOptions {
   env: string;
   name: string;
-  enableFile: boolean;
-  enableConsole: boolean;
-  fileLevelDict?: LevelDict;
+  mode: ('Console' | 'File' | 'DailyRotateFile')[];
+  fileLevelDict?: LogLevelDict;
   fileNameCallback?: (fileKey: string) => string;
-  fileTransportOptions?: DailyRotateFileTransportOptions;
-}
-
-export interface LoggerFormatOptions {
-  env: string;
-  name: string;
-  isConsole: boolean;
+  transportOptions?: transports.ConsoleTransportOptions | transports.FileTransportOptions | DailyRotateFileTransportOptions;
 }

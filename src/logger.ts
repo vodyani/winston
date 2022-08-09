@@ -1,5 +1,5 @@
 import { This } from '@vodyani/utils';
-import { Logger, LoggerOptions, createLogger } from 'winston';
+import { createLogger, Logger, LoggerOptions } from 'winston';
 
 export class BaseLogger {
   private readonly instance: Logger;
@@ -10,7 +10,7 @@ export class BaseLogger {
 
   @This
   public log(message: any) {
-    this.instance.log(message);
+    this.instance.info(message);
   }
 
   @This
