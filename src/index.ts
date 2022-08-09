@@ -1,4 +1,3 @@
-export * from './common';
-export * from './factory';
-export * from './formatter';
-export * from './logger';
+export { CreateOptions } from './common';
+export { LoggerFactory } from './factory';
+export { Winston } from './logger';
