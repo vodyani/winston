@@ -17,7 +17,7 @@ export class ConsoleLogFormatter implements LogFormatter {
   @This
   private format(name: string, env: string, info: Logform.TransformableInfo) {
     const level = info.level.toLocaleLowerCase();
-    const output = `[${name} <${process.pid}>] - ${info.timestamp} [${env}] ${level}`;
+    const output = `[${name}] - ${info.timestamp} [${env} ${process.pid}] ${level}`;
 
     if (isDictionary(info.message)) {
       return `${output}: ${JSON.stringify(info.message)}`;
