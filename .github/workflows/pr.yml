@@ -6,4 +6,6 @@ on:
 
 jobs:
   check:
-    uses: vodyani/workflows/.github/workflows/pre-check.yml@master
+    uses: vodyani/workflows/.github/workflows/check.yml@master
+    with:
+      enable_test: true

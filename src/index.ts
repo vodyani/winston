@@ -1,2 +1,2 @@
-export * from './base';
-export * from './common';
+export { CreateOptions, Logger } from './common';
+export { LoggerFactory } from './factory';
