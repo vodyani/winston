@@ -7,7 +7,7 @@
 [![Npm](https://img.shields.io/npm/dm/@vodyani/winston)](https://www.npmjs.com/package/@vodyani/winston)
 [![License](https://img.shields.io/github/license/vodyani/winston)](LICENSE)
 <br>
-[![codecov](https://codecov.io/gh/vodyani/winston/branch/master/graph/badge.svg?token=O0BNXIWW1M)](https://codecov.io/gh/vodyani/winston)
+[![codecov](https://codecov.io/gh/vodyani/winston/branch/master/graph/badge.svg?token=MCD6EGYBHA)](https://codecov.io/gh/vodyani/winston)
 ![Workflow](https://github.com/vodyani/winston/actions/workflows/release.yml/badge.svg)
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
@@ -96,7 +96,7 @@ Object.keys(levelDict).forEach(key => {
 
 2. 自定义文件名
 
-*当您希望自定义文件名，需要传入 customFilename 参数，这是一个由您自定义的回调函数*
+当您希望自定义文件名，需要传入 customFilename 参数，这是一个由您自定义的回调函数
 
 下面将创建一段伪代码，来演示在启用 `'File'` 模式后，默认值的填充过程：
 
@@ -135,7 +135,7 @@ Object.keys(levelDict).forEach(key => {
 
 2. 自定义文件名
 
-*当您希望自定义文件名，需要传入 customFilename 参数，这是一个由您自定义的回调函数*
+当您希望自定义文件名，需要传入 customFilename 参数，这是一个由您自定义的回调函数
 
 下面将创建一段伪代码，来演示在启用 `'DailyRotateFile'` 模式后，默认值的填充过程：
 

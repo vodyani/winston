@@ -7,7 +7,7 @@
 [![Npm](https://img.shields.io/npm/dm/@vodyani/winston)](https://www.npmjs.com/package/@vodyani/winston)
 [![License](https://img.shields.io/github/license/vodyani/winston)](LICENSE)
 <br>
-[![codecov](https://codecov.io/gh/vodyani/winston/branch/master/graph/badge.svg?token=O0BNXIWW1M)](https://codecov.io/gh/vodyani/winston)
+[![codecov](https://codecov.io/gh/vodyani/winston/branch/master/graph/badge.svg?token=MCD6EGYBHA)](https://codecov.io/gh/vodyani/winston)
 ![Workflow](https://github.com/vodyani/winston/actions/workflows/release.yml/badge.svg)
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
@@ -74,8 +74,6 @@ Turning on exception handling when `exitOnError` is false will turn on `handleEx
 - `rejectionHandlers` and `exceptionHandlers` will only have one `error transport` each in a log processor
 - The priority of setting `error transport` is: `DailyRotateFile` > `File` > `Console`
 
-Translated with www.DeepL.com/Translator (free version)
-
 #### Additional notes on the fileOptions parameter
 
 1. Default Value
@@ -98,7 +96,7 @@ Object.keys(levelDict).forEach(key => {
 
 2. Custom File Name
 
-*When you want to customize the file name, you need to pass the customFilename parameter, which is a callback function customized by you.*
+When you want to customize the file name, you need to pass the customFilename parameter, which is a callback function customized by you.
 
 The following pseudo-code will be created to demonstrate the process of populating the default values when `'File'` mode is enabled:
 
@@ -137,7 +135,7 @@ Object.keys(levelDict).forEach(key => {
 
 2. Custom File Name
 
-*When you want to customize the file name, you need to pass the customFilename parameter, which is a callback function customized by you.*
+When you want to customize the file name, you need to pass the customFilename parameter, which is a callback function customized by you.
 
 The following pseudo-code will be created to demonstrate the process of populating the default values when `'DailyRotateFile'` mode is enabled:
 
