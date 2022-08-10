@@ -25,7 +25,15 @@ export class ConsoleLogFormatter implements LogFormatter {
         let output = `${label}`;
 
         output += `: ${message.data.message}`;
-        output += `\n Extra: ${JSON.stringify(message.data.extra)}`;
+
+        if (message.source) {
+          output += `\n Error Source: ${JSON.stringify(message.source)}`;
+        }
+
+        if (message.data.extra) {
+          output += `\n Error Extra: ${JSON.stringify(message.data.extra)}`;
+        }
+
         output += `\n ${message.data.stack}}`;
 
         return output;
@@ -56,6 +64,7 @@ export class FileLogFormatter implements LogFormatter {
       level,
       pid: process.pid,
       timestamp: info.timestamp,
+      source: message.source,
       message: message.data,
     });
   }

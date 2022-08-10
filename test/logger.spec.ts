@@ -9,15 +9,13 @@ describe('LoggerFactory', () => {
   const error = new Error('I\'m Error 😏');
 
   it('empty logger', async () => {
-    const logger = factory.create({
+    factory.create({
       env: 'LOCAL',
       name: 'empty-logger',
       handleExceptions: false,
       handleRejections: false,
       mode: [],
     });
-
-    logger.log('log input');
   });
 
   it('logger', async () => {
@@ -35,11 +33,11 @@ describe('LoggerFactory', () => {
       },
     });
 
-    logger.log('log input');
-    logger.info('info input');
-    logger.warn('warn input');
-    logger.debug('debug input');
-    logger.error(error, 'error input');
+    logger.log('log input', 'logger');
+    logger.info('info input', 'logger');
+    logger.warn('warn input', 'logger');
+    logger.debug('debug input', 'logger');
+    logger.error(error, 'error input', 'logger');
     logger.error(error);
   });
 

@@ -4,11 +4,11 @@ import { GeneralDailyRotateFileTransportOptions } from 'winston-daily-rotate-fil
 import { Transport } from './declare';
 
 export interface Logger {
-  log: (data: any) => void;
-  info: (data: any) => void;
-  debug: (data: any) => void;
-  warn: (data: any) => void;
-  error: (error: Error, extra: any) => void;
+  log: (data: any, source: any) => void;
+  info: (data: any, source: any) => void;
+  debug: (data: any, source: any) => void;
+  warn: (data: any, source: any) => void;
+  error: (error: Error, extra: any, source: any) => void;
 }
 
 export interface LogFormatter {
@@ -33,6 +33,7 @@ export interface LogLevelDict {
 
 export interface LogMessage {
   data: any;
+  source?: string;
   isError: boolean;
 }
 
