@@ -18,12 +18,22 @@ describe('LoggerFactory', () => {
     });
   });
 
+  it('empty error handler', async () => {
+    factory.create({
+      env: 'LOCAL',
+      name: 'empty-logger',
+      exitOnError: false,
+      rejectionHandlers: [Object()],
+      exceptionHandlers: [Object()],
+      mode: [],
+    });
+  });
+
   it('logger', async () => {
     const logger = factory.create({
       env: 'LOCAL',
       name: 'logger',
-      handleExceptions: true,
-      handleRejections: true,
+      exitOnError: false,
       mode: ['Console', 'File', 'DailyRotateFile'],
       fileOptions: {
         dirname: resolve(__dirname, './temp/file'),
@@ -49,10 +59,10 @@ describe('LoggerFactory', () => {
       handleRejections: true,
       mode: ['File', 'DailyRotateFile'],
       fileOptions: {
-        createFilename: (key: string) => `custom-logger-${key}.log`,
+        customFilename: (key: string) => `custom-logger-${key}.log`,
       },
       dailyRotateFileOptions: {
-        createFilename: (key: string) => `%DATE%-custom-logger-${key}.log`,
+        customFilename: (key: string) => `%DATE%-custom-logger-${key}.log`,
       },
     });
 
@@ -60,13 +70,24 @@ describe('LoggerFactory', () => {
     logger.error(error, 'log input');
   });
 
-  it('empty options logger', async () => {
+  it('empty options file logger', async () => {
     const logger = factory.create({
       env: 'LOCAL',
-      name: 'custom-options-logger',
-      handleExceptions: true,
-      handleRejections: true,
-      mode: ['File', 'DailyRotateFile'],
+      name: 'custom-options-file-logger',
+      exitOnError: false,
+      mode: ['File'],
+    });
+
+    logger.log('log input');
+    logger.error(error, 'log input');
+  });
+
+  it('empty options console logger', async () => {
+    const logger = factory.create({
+      env: 'LOCAL',
+      name: 'custom-options-console-logger',
+      exitOnError: false,
+      mode: ['Console'],
     });
 
     logger.log('log input');

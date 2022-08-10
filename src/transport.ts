@@ -12,7 +12,7 @@ export class ConsoleTransport implements LogTransport {
     options?: transports.ConsoleTransportOptions,
   ) {
     const format = new ConsoleLogFormatter().build(name, env);
-    return new transports.Console({ format, level, ...options });
+    return new transports.Console({ ...options, format, level });
   }
 }
 
@@ -24,7 +24,7 @@ export class FileTransport implements LogTransport {
     options: transports.FileTransportOptions,
   ) {
     const format = new FileLogFormatter().build(name, env);
-    return new transports.File({ format, level, ...options });
+    return new transports.File({ ...options, format, level });
   }
 }
 
@@ -36,6 +36,6 @@ export class DailyRotateFileTransport implements LogTransport {
     options: DailyRotateFileOptions,
   ) {
     const format = new FileLogFormatter().build(name, env);
-    return new transports.DailyRotateFile({ format, level, ...options } as unknown as DailyRotateFile.DailyRotateFileTransportOptions);
+    return new transports.DailyRotateFile({ ...options, format, level } as unknown as DailyRotateFile.DailyRotateFileTransportOptions);
   }
 }

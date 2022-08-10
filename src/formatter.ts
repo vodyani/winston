@@ -64,7 +64,7 @@ export class FileLogFormatter implements LogFormatter {
       level,
       pid: process.pid,
       timestamp: info.timestamp,
-      source: message.source,
+      source: message.source || name,
       message: message.data,
     });
   }
