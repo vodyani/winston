@@ -3,6 +3,14 @@ import { GeneralDailyRotateFileTransportOptions } from 'winston-daily-rotate-fil
 
 import { Transport } from './declare';
 
+export interface Logger {
+  log: (data: any) => void;
+  info: (data: any) => void;
+  debug: (data: any) => void;
+  warn: (data: any) => void;
+  error: (error: Error, extra: any) => void;
+}
+
 export interface LogFormatter {
   build: (name: string, env: string) => Logform.Format;
 }
@@ -13,6 +21,10 @@ export interface LogTransport {
 
 export interface LogOptionsBuilder {
   build: (options: CreateOptions) => LoggerOptions;
+}
+
+export interface LogFactory {
+  create: (options: CreateOptions) => Logger;
 }
 
 export interface LogLevelDict {

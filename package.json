@@ -68,7 +68,7 @@
     "@commitlint/config-conventional": "16.2.1",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.26",
-    "@vodyani/eslint-config": "^1.0.10",
+    "@vodyani/eslint-config": "1.0.10",
     "@vodyani/semantic-release": "1.1.1",
     "husky": "7.0.4",
     "jest": "27.5.1",
@@ -76,10 +76,10 @@
     "typescript": "4.6.3"
   },
   "dependencies": {
-    "@vodyani/core": "^8.4.13",
-    "@vodyani/transformer": "^0.6.1",
-    "@vodyani/utils": "^1.4.2",
-    "@vodyani/validator": "^0.14.0",
+    "@vodyani/core": "8.4.13",
+    "@vodyani/transformer": "0.6.1",
+    "@vodyani/utils": "1.4.2",
+    "@vodyani/validator": "0.14.0",
     "winston": "3.8.1",
     "winston-daily-rotate-file": "4.6.1"
   }

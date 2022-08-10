@@ -1,10 +1,10 @@
 import { This } from '@vodyani/utils';
 
 import { Winston } from './logger';
-import { CreateOptions } from './common';
 import { LoggerOptionBuilder } from './builder';
+import { CreateOptions, LogFactory } from './common';
 
-export class LoggerFactory {
+export class LoggerFactory implements LogFactory {
   @This
   public create(createOptions: CreateOptions) {
     const options = new LoggerOptionBuilder().build(createOptions);

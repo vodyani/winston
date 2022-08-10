@@ -1,8 +1,10 @@
 import { This } from '@vodyani/utils';
-import { createLogger, Logger, LoggerOptions } from 'winston';
+import { createLogger, Logger as Base, LoggerOptions } from 'winston';
 
-export class Winston {
-  private readonly instance: Logger;
+import { Logger } from './common';
+
+export class Winston implements Logger {
+  private readonly instance: Base;
 
   constructor(options: LoggerOptions) {
     this.instance = createLogger(options);
