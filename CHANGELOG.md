@@ -1,3 +1,11 @@
+## [8.4.4](https://github.com/vodyani/winston/compare/v8.4.3...v8.4.4) (2022-08-10)
+
+
+### Bug Fixes
+
+* docs ([08a49ca](https://github.com/vodyani/winston/commit/08a49ca7ea6b23bd36a02b7f9255de0e570bb5f1))
+* docs ([a3cb9ed](https://github.com/vodyani/winston/commit/a3cb9ed6ec344e9f9dff5dbe0fa3ff2cb9f731ee))
+
 ## [8.4.4-beta.1](https://github.com/vodyani/winston/compare/v8.4.3...v8.4.4-beta.1) (2022-08-10)
 
 
