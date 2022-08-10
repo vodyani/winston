@@ -7,7 +7,7 @@
 [![Npm](https://img.shields.io/npm/dm/@vodyani/winston)](https://www.npmjs.com/package/@vodyani/winston)
 [![License](https://img.shields.io/github/license/vodyani/winston)](LICENSE)
 <br>
-[![codecov](https://codecov.io/gh/vodyani/winston/branch/master/graph/badge.svg?token=O0BNXIWW1M)](https://codecov.io/gh/vodyani/winston)
+[![codecov](https://codecov.io/gh/vodyani/winston/branch/master/graph/badge.svg?token=MCD6EGYBHA)](https://codecov.io/gh/vodyani/winston)
 ![Workflow](https://github.com/vodyani/winston/actions/workflows/release.yml/badge.svg)
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
