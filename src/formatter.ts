@@ -1,5 +1,4 @@
 import { format, Logform } from 'winston';
-import { isValidString } from '@vodyani/validator';
 import { isDictionary, This } from '@vodyani/utils';
 
 import { LogFormatter, LogMessage } from './common';
@@ -33,10 +32,6 @@ export class ConsoleLogFormatter implements LogFormatter {
       }
 
       return `${label}: ${JSON.stringify(message.data, null, 4)}`;
-    }
-
-    if (isValidString(info.message)) {
-      return `${label}: ${info.message}`;
     }
   }
 }

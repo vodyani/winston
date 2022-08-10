@@ -1,7 +1,7 @@
 import 'winston-daily-rotate-file';
 import { transports } from 'winston';
 
-import { DailyRotateFile, LogTransport } from './common';
+import { DailyRotateFile, DailyRotateFileOptions, LogTransport } from './common';
 import { ConsoleLogFormatter, FileLogFormatter } from './formatter';
 
 export class ConsoleTransport implements LogTransport {
@@ -11,10 +11,8 @@ export class ConsoleTransport implements LogTransport {
     level: string,
     options?: transports.ConsoleTransportOptions,
   ) {
-    const currentOptions = options || Object();
     const format = new ConsoleLogFormatter().build(name, env);
-
-    return new transports.Console({ format, level, ...currentOptions });
+    return new transports.Console({ format, level, ...options });
   }
 }
 
@@ -23,12 +21,10 @@ export class FileTransport implements LogTransport {
     name: string,
     env: string,
     level: string,
-    options?: transports.FileTransportOptions,
+    options: transports.FileTransportOptions,
   ) {
-    const currentOptions = options || Object();
     const format = new FileLogFormatter().build(name, env);
-
-    return new transports.File({ format, level, ...currentOptions });
+    return new transports.File({ format, level, ...options });
   }
 }
 
@@ -37,11 +33,9 @@ export class DailyRotateFileTransport implements LogTransport {
     name: string,
     env: string,
     level: string,
-    options?: DailyRotateFile.DailyRotateFileTransportOptions,
+    options: DailyRotateFileOptions,
   ) {
-    const currentOptions = options || Object();
     const format = new FileLogFormatter().build(name, env);
-
-    return new transports.DailyRotateFile({ format, level, ...currentOptions });
+    return new transports.DailyRotateFile({ format, level, ...options } as unknown as DailyRotateFile.DailyRotateFileTransportOptions);
   }
 }

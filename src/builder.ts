@@ -1,55 +1,58 @@
+import { isValidArray } from '@vodyani/validator';
 import { This, toDeepMerge } from '@vodyani/utils';
 import { LoggerOptions, transports } from 'winston';
 
 import { ConsoleTransport, FileTransport, DailyRotateFileTransport } from './transport';
-import { CreateOptions, DailyRotateFile, defaultLevelDict, LogLevelDict, Transport } from './common';
+import { CreateOptions, DailyRotateFileOptions, defaultLevelDict, FileOptions, LogLevelDict, LogOptionsBuilder, Transport } from './common';
 
-export class LoggerOptionBuilder {
+export class LoggerOptionBuilder implements LogOptionsBuilder {
   private instance: LoggerOptions;
 
-  constructor(createOptions: CreateOptions) {
-    const { levels, silent, transports, exitOnError, defaultMeta, handleExceptions, handleRejections } = createOptions;
-    this.instance = { levels, silent, exitOnError, defaultMeta, handleExceptions, handleRejections, transports: transports || [] };
-    this.build(createOptions);
-  }
-
   @This
-  public output() {
+  public build(options: CreateOptions) {
+    this.init(options);
+
+    this.assembleTransports(options);
+
     return this.instance;
   }
 
   @This
-  private build(createOptions: CreateOptions) {
-    const { env, name, mode, fileLevelDict, fileNameCallback, transportOptions } = createOptions;
+  private init(options: CreateOptions) {
+    const {
+      levels, silent, transports, exitOnError, defaultMeta, handleExceptions, handleRejections,
+    } = options;
 
-    mode.forEach(type => {
+    this.instance = {
+      levels,
+      silent,
+      exitOnError,
+      defaultMeta,
+      handleExceptions,
+      handleRejections,
+      transports: transports || [],
+    };
+  }
+
+  @This
+  private assembleTransports(options: CreateOptions) {
+    const {
+      env, name, mode, levelDict, consoleOptions, fileOptions, dailyRotateFileOptions,
+    } = options;
+
+    const transportModes = isValidArray(mode) ? new Set(mode) : new Set([]);
+
+    transportModes.forEach(type => {
       if (type === 'Console') {
-        this.assembleConsole(
-          name,
-          env,
-          fileLevelDict,
-          (transportOptions as transports.FileTransportOptions),
-        );
+        this.assembleConsole(name, env, levelDict, consoleOptions);
       }
 
       if (type === 'File') {
-        this.assembleFile(
-          name,
-          env,
-          fileLevelDict,
-          (transportOptions as transports.FileTransportOptions),
-          fileNameCallback,
-        );
+        this.assembleFile(name, env, levelDict, fileOptions);
       }
 
       if (type === 'DailyRotateFile') {
-        this.assembleDailyRotateFile(
-          name,
-          env,
-          fileLevelDict,
-          (transportOptions as DailyRotateFile.DailyRotateFileTransportOptions),
-          fileNameCallback,
-        );
+        this.assembleDailyRotateFile(name, env, levelDict, dailyRotateFileOptions);
       }
     });
   }
@@ -59,12 +62,11 @@ export class LoggerOptionBuilder {
     name: string,
     env: string,
     levelDict: LogLevelDict,
-    options?: transports.ConsoleTransportOptions,
+    options: transports.ConsoleTransportOptions = {},
   ) {
     const dict = toDeepMerge(defaultLevelDict, levelDict);
 
     Object.keys(dict).forEach(key => {
-
       const level = dict[key];
       const transport = new ConsoleTransport().build(name, env, level, options);
 
@@ -87,17 +89,16 @@ export class LoggerOptionBuilder {
     name: string,
     env: string,
     levelDict: LogLevelDict,
-    options: transports.FileTransportOptions,
-    fileNameCallback?: (fileKey: string) => string,
+    options: FileOptions = {},
   ) {
     const dict = toDeepMerge(defaultLevelDict, levelDict);
 
     Object.keys(dict).forEach(key => {
-      options.filename = fileNameCallback
-        ? fileNameCallback(key)
-        : `${name}.${key}.log`;
-
       const level = dict[key];
+
+      options.dirname = options.dirname || './logs';
+      options.filename = options.createFilename ? options.createFilename(key) : `${name}.${key}.log`;
+
       const transport = new FileTransport().build(name, env, level, options);
 
       if (this.instance.handleExceptions && level === 'error') {
@@ -117,17 +118,16 @@ export class LoggerOptionBuilder {
     name: string,
     env: string,
     levelDict: LogLevelDict,
-    options: DailyRotateFile.DailyRotateFileTransportOptions,
-    fileNameCallback?: (fileKey: string) => string,
+    options: DailyRotateFileOptions = {},
   ) {
     const dict = toDeepMerge(defaultLevelDict, levelDict);
 
     Object.keys(dict).forEach(key => {
-      options.filename = fileNameCallback
-        ? fileNameCallback(key)
-        : `%DATE%-${name}.${key}.log`;
-
       const level = dict[key];
+
+      options.dirname = options.dirname || './logs';
+      options.filename = options.createFilename ? options.createFilename(key) : `%DATE%-${name}.${key}.log`;
+
       const transport = new DailyRotateFileTransport().build(name, env, level, options);
 
       if (this.instance.handleExceptions && level === 'error') {
