@@ -96,7 +96,7 @@ Object.keys(levelDict).forEach(key => {
 
 2. 自定义文件名
 
-*当您希望自定义文件名，需要传入 customFilename 参数，这是一个由您自定义的回调函数*
+当您希望自定义文件名，需要传入 customFilename 参数，这是一个由您自定义的回调函数
 
 下面将创建一段伪代码，来演示在启用 `'File'` 模式后，默认值的填充过程：
 
@@ -135,7 +135,7 @@ Object.keys(levelDict).forEach(key => {
 
 2. 自定义文件名
 
-*当您希望自定义文件名，需要传入 customFilename 参数，这是一个由您自定义的回调函数*
+当您希望自定义文件名，需要传入 customFilename 参数，这是一个由您自定义的回调函数
 
 下面将创建一段伪代码，来演示在启用 `'DailyRotateFile'` 模式后，默认值的填充过程：
 
