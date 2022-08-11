@@ -1,5 +1,6 @@
 import { format, Logform } from 'winston';
-import { isDictionary, This } from '@vodyani/utils';
+import { isValidDict } from '@vodyani/utils';
+import { This } from '@vodyani/class-decorator';
 
 import { LogFormatter, LogMessage } from './common';
 
@@ -18,7 +19,7 @@ export class ConsoleLogFormatter implements LogFormatter {
     const level = info.level.toLocaleLowerCase();
     const label = `[${name}] - ${info.timestamp} [${env} ${process.pid}] ${level}`;
 
-    if (isDictionary(info.message)) {
+    if (isValidDict(info.message)) {
       const message = (info.message as unknown as LogMessage);
 
       if (message.isError) {
