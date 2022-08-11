@@ -1,4 +1,4 @@
-import { This } from '@vodyani/utils';
+import { This } from '@vodyani/class-decorator';
 
 import { Winston } from './logger';
 import { LoggerOptionBuilder } from './builder';

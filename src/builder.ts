@@ -1,5 +1,5 @@
-import { This, toDeepMerge } from '@vodyani/utils';
-import { isValid, isValidArray } from '@vodyani/validator';
+import { This } from '@vodyani/class-decorator';
+import { toDeepMerge, isValid, isValidArray } from '@vodyani/utils';
 
 import { ConsoleTransport, FileTransport, DailyRotateFileTransport } from './transport';
 import { CreateOptions, defaultLevelDict, LogOptions, LogOptionsBuilder, Transport } from './common';
