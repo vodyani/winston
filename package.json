@@ -3,7 +3,7 @@
   "license": "MIT",
   "version": "8.4.5",
   "author": "ChoGathK",
-  "description": "An out-of-the-box Winston logger generator",
+  "description": "📒 Vodyani winston is a logging tool for operating and recording application logs.",
   "homepage": "https://github.com/vodyani/winston#readme",
   "repository": {
     "type": "git",
