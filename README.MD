@@ -1,6 +1,6 @@
 # Vodyani winston
 
-**@vodyani/winston** 是一个开箱即用的服务端日志工具 🐯
+📒 Vodyani winston 是一个日志工具，用于操作和记录应用日志。
 
 [![Npm](https://img.shields.io/npm/v/@vodyani/winston/latest.svg)](https://www.npmjs.com/package/@vodyani/winston)
 [![Npm](https://img.shields.io/npm/v/@vodyani/winston/beta.svg)](https://www.npmjs.com/package/@vodyani/winston)
