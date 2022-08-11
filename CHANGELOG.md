@@ -1,3 +1,10 @@
+## [8.4.4-beta.2](https://github.com/vodyani/winston/compare/v8.4.4-beta.1...v8.4.4-beta.2) (2022-08-11)
+
+
+### Bug Fixes
+
+* merging dependency packages ([12ff3d5](https://github.com/vodyani/winston/commit/12ff3d51bf5d65874b1b719ea51bd4aab4e67270))
+
 ## [8.4.4-beta.1](https://github.com/vodyani/winston/compare/v8.4.3...v8.4.4-beta.1) (2022-08-10)
 
 
