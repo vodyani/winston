@@ -1,3 +1,10 @@
+## [8.4.6-beta.1](https://github.com/vodyani/winston/compare/v8.4.5...v8.4.6-beta.1) (2022-08-18)
+
+
+### Bug Fixes
+
+* fix the naming of the export ([2e0f9ce](https://github.com/vodyani/winston/commit/2e0f9ceee53002132e63a2b096043e6a3a07d6a4))
+
 ## [8.4.5](https://github.com/vodyani/winston/compare/v8.4.4...v8.4.5) (2022-08-11)
 
 
