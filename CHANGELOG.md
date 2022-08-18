@@ -1,9 +1,25 @@
+## [8.4.5](https://github.com/vodyani/winston/compare/v8.4.4...v8.4.5) (2022-08-11)
+
+
+### Bug Fixes
+
+* merging dependency packages ([dabbf15](https://github.com/vodyani/winston/commit/dabbf151bae82bcbcea1bc66598eaf9adcf2a0e2))
+* merging dependency packages ([12ff3d5](https://github.com/vodyani/winston/commit/12ff3d51bf5d65874b1b719ea51bd4aab4e67270))
+
 ## [8.4.4-beta.2](https://github.com/vodyani/winston/compare/v8.4.4-beta.1...v8.4.4-beta.2) (2022-08-11)
 
 
 ### Bug Fixes
 
 * merging dependency packages ([12ff3d5](https://github.com/vodyani/winston/commit/12ff3d51bf5d65874b1b719ea51bd4aab4e67270))
+
+## [8.4.4](https://github.com/vodyani/winston/compare/v8.4.3...v8.4.4) (2022-08-10)
+
+
+### Bug Fixes
+
+* docs ([08a49ca](https://github.com/vodyani/winston/commit/08a49ca7ea6b23bd36a02b7f9255de0e570bb5f1))
+* docs ([a3cb9ed](https://github.com/vodyani/winston/commit/a3cb9ed6ec344e9f9dff5dbe0fa3ff2cb9f731ee))
 
 ## [8.4.4-beta.1](https://github.com/vodyani/winston/compare/v8.4.3...v8.4.4-beta.1) (2022-08-10)
 

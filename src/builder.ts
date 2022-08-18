@@ -2,9 +2,9 @@ import { This } from '@vodyani/class-decorator';
 import { toDeepMerge, isValid, isValidArray } from '@vodyani/utils';
 
 import { ConsoleTransport, FileTransport, DailyRotateFileTransport } from './transport';
-import { CreateOptions, defaultLevelDict, LogOptions, LogOptionsBuilder, Transport } from './common';
+import { CreateOptions, defaultLevelDict, LogOptions, ILoggerOptionsBuilder, Transport } from './common';
 
-export class LoggerOptionBuilder implements LogOptionsBuilder {
+export class LoggerOptionBuilder implements ILoggerOptionsBuilder {
   private options: LogOptions;
 
   private source: CreateOptions;
