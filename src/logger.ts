@@ -1,9 +1,9 @@
 import { This } from '@vodyani/class-decorator';
 import { createLogger, Logger as Base } from 'winston';
 
-import { Logger, LogOptions } from './common';
+import { ILogger, LogOptions } from './common';
 
-export class Winston implements Logger {
+export class Logger implements ILogger {
   private readonly instance: Base;
 
   constructor(options: LogOptions) {

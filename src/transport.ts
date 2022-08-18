@@ -2,9 +2,9 @@ import 'winston-daily-rotate-file';
 import { transports } from 'winston';
 
 import { ConsoleLogFormatter, FileLogFormatter } from './formatter';
-import { DailyRotateFile, DailyRotateFileOptions, LogTransport } from './common';
+import { DailyRotateFile, DailyRotateFileOptions, ILoggerTransport } from './common';
 
-export class ConsoleTransport implements LogTransport {
+export class ConsoleTransport implements ILoggerTransport {
   public build(
     name: string,
     env: string,
@@ -16,7 +16,7 @@ export class ConsoleTransport implements LogTransport {
   }
 }
 
-export class FileTransport implements LogTransport {
+export class FileTransport implements ILoggerTransport {
   public build(
     name: string,
     env: string,
@@ -28,7 +28,7 @@ export class FileTransport implements LogTransport {
   }
 }
 
-export class DailyRotateFileTransport implements LogTransport {
+export class DailyRotateFileTransport implements ILoggerTransport {
   public build(
     name: string,
     env: string,
