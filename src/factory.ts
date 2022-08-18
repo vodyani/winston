@@ -1,13 +1,13 @@
 import { This } from '@vodyani/class-decorator';
 
-import { Winston } from './logger';
+import { Logger } from './logger';
 import { LoggerOptionBuilder } from './builder';
-import { CreateOptions, LogFactory } from './common';
+import { CreateOptions, ILoggerFactory } from './common';
 
-export class LoggerFactory implements LogFactory {
+export class LoggerFactory implements ILoggerFactory {
   @This
   public create(createOptions: CreateOptions) {
     const options = new LoggerOptionBuilder().build(createOptions);
-    return new Winston(options);
+    return new Logger(options);
   }
 }

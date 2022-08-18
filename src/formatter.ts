@@ -2,9 +2,9 @@ import { format, Logform } from 'winston';
 import { isValidDict } from '@vodyani/utils';
 import { This } from '@vodyani/class-decorator';
 
-import { LogFormatter, LogMessage } from './common';
+import { ILoggerFormatter, LogMessage } from './common';
 
-export class ConsoleLogFormatter implements LogFormatter {
+export class ConsoleLogFormatter implements ILoggerFormatter {
   @This
   public build(name: string, env: string) {
     return format.combine(
@@ -45,7 +45,7 @@ export class ConsoleLogFormatter implements LogFormatter {
   }
 }
 
-export class FileLogFormatter implements LogFormatter {
+export class FileLogFormatter implements ILoggerFormatter {
   @This
   public build(name: string, env: string) {
     return format.combine(
