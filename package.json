@@ -1,7 +1,7 @@
 {
   "name": "@vodyani/winston",
   "license": "MIT",
-  "version": "8.4.6-beta.1",
+  "version": "8.4.6",
   "author": "ChoGathK",
   "description": "📒 Vodyani winston is a logging tool for operating and recording application logs.",
   "homepage": "https://github.com/vodyani/winston#readme",
@@ -65,9 +65,8 @@
     ]
   },
   "dependencies": {
-    "@vodyani/class-decorator": "8.1.0",
-    "@vodyani/core": "8.4.13",
-    "@vodyani/utils": "8.4.2",
+    "@vodyani/class-decorator": "^8.1.1",
+    "@vodyani/utils": "^8.4.2",
     "winston": "3.8.1",
     "winston-daily-rotate-file": "4.6.1"
   },
@@ -79,7 +78,7 @@
     "@commitlint/config-conventional": "16.2.1",
     "@types/jest": "27.4.1",
     "@types/node": "16.11.26",
-    "@vodyani/eslint-config": "1.0.10",
+    "@vodyani/eslint-config": "^1.0.10",
     "@vodyani/semantic-release": "1.1.1",
     "husky": "7.0.4",
     "jest": "27.5.1",
