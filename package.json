@@ -1,7 +1,7 @@
 {
   "name": "@vodyani/winston",
   "license": "MIT",
-  "version": "8.4.6",
+  "version": "8.4.7-beta.1",
   "author": "ChoGathK",
   "description": "📒 Vodyani winston is a logging tool for operating and recording application logs.",
   "homepage": "https://github.com/vodyani/winston#readme",
