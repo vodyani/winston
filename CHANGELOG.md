@@ -1,3 +1,10 @@
+## [8.4.7-beta.1](https://github.com/vodyani/winston/compare/v8.4.6...v8.4.7-beta.1) (2022-08-19)
+
+
+### Bug Fixes
+
+* adjust the order of the exception text in the console output scenario ([6e5ecb0](https://github.com/vodyani/winston/commit/6e5ecb026261ddd7ce13bf728b1fbabd105698f0))
+
 ## [8.4.6](https://github.com/vodyani/winston/compare/v8.4.5...v8.4.6) (2022-08-18)
 
 
