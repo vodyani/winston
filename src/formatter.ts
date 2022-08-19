@@ -27,15 +27,15 @@ export class ConsoleLogFormatter implements ILoggerFormatter {
 
         output += `: ${message.data.message}`;
 
-        if (message.source) {
-          output += `\n Error Source: ${JSON.stringify(message.source)}`;
-        }
+        output += `\n ${message.data.stack}}`;
 
         if (message.data.extra) {
           output += `\n Error Extra: ${JSON.stringify(message.data.extra)}`;
         }
 
-        output += `\n ${message.data.stack}}`;
+        if (message.source) {
+          output += `\n Error Source: ${JSON.stringify(message.source)}`;
+        }
 
         return output;
       }
