@@ -26,6 +26,12 @@ npm install @vodyani/winston
 
 - [Discussions 🧐](https://github.com/vodyani/winston/discussions)
 
+## Team
+
+|[![ChoGathK](https://github.com/chogathK.png?size=100)](https://github.com/chogathK)|
+|:-:|
+|[ChoGathK](https://github.com/chogathK)|
+
 ## License
 
 Vodyani winston is [MIT licensed](LICENSE).
