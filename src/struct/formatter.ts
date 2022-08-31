@@ -26,21 +26,16 @@ export class ConsoleLogFormatter implements ILoggerFormatter {
         let output = `${label}`;
 
         output += `: ${message.data.message}`;
-
         output += `\n ${message.data.stack}}`;
 
         if (message.data.extra) {
-          output += `\n Error Extra: ${JSON.stringify(message.data.extra)}`;
-        }
-
-        if (message.source) {
-          output += `\n Error Source: ${JSON.stringify(message.source)}`;
+          output += `\n \n Error Extra: ${JSON.stringify(message.data.extra)}`;
         }
 
         return output;
       }
 
-      return `${label}: ${JSON.stringify(message.data, null, 4)}`;
+      return `${label}: ${JSON.stringify(message.data)}`;
     }
   }
 }
