@@ -66,15 +66,11 @@ export class LoggerOptionBuilder implements ILoggerOptionsBuilder {
 
   @This
   private assembleConsole() {
-    const { env, name, consoleOptions, levelDict } = this.source;
+    const { env, name, consoleOptions } = this.source;
+    const transport = new ConsoleTransport().build(name, env, 'debug', consoleOptions);
 
-    Object.keys(levelDict).forEach(key => {
-      const level = levelDict[key];
-      const transport = new ConsoleTransport().build(name, env, level, consoleOptions);
-
-      if (level === 'error') this.errorTransport = transport;
-      (this.options.transports as Transport[]).push(transport);
-    });
+    this.errorTransport = transport;
+    (this.options.transports as Transport[]).push(transport);
   }
 
   @This
