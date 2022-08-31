@@ -1,3 +1,10 @@
+## [8.4.8](https://github.com/vodyani/winston/compare/v8.4.7...v8.4.8) (2022-08-26)
+
+
+### Bug Fixes
+
+* semantic-release workflow ([b4bf605](https://github.com/vodyani/winston/commit/b4bf605625a24cde205fc84a0c3827f051c3e393))
+
 ## [8.4.7](https://github.com/vodyani/winston/compare/v8.4.6...v8.4.7) (2022-08-19)
 
 
