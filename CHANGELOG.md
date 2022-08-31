@@ -1,3 +1,10 @@
+## [8.5.1](https://github.com/vodyani/winston/compare/v8.5.0...v8.5.1) (2022-08-31)
+
+
+### Bug Fixes
+
+* remove invalid dependency declarations ([951974e](https://github.com/vodyani/winston/commit/951974e179523c2c9a530981444b7325f2b165e1))
+
 # [8.5.0](https://github.com/vodyani/winston/compare/v8.4.8...v8.5.0) (2022-08-31)
 
 
