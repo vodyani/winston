@@ -1,3 +1,16 @@
+# [8.5.0](https://github.com/vodyani/winston/compare/v8.4.8...v8.5.0) (2022-08-31)
+
+
+### Bug Fixes
+
+* adjust processing logic with core package changes ([b9726bb](https://github.com/vodyani/winston/commit/b9726bbfc641f2c317ac82c168a21b2940b894fe))
+* ci ([c79dbd2](https://github.com/vodyani/winston/commit/c79dbd2164e437c375712d616a76ad0dad34d006))
+
+
+### Features
+
+* added support for Vodyani providers ([9f3d9a1](https://github.com/vodyani/winston/commit/9f3d9a13d18f56b341f8af3ca35d95679806bdb5))
+
 ## [8.4.8](https://github.com/vodyani/winston/compare/v8.4.7...v8.4.8) (2022-08-26)
 
 
