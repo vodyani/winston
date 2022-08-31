@@ -1,3 +1,10 @@
+## [8.5.2](https://github.com/vodyani/winston/compare/v8.5.1...v8.5.2) (2022-08-31)
+
+
+### Bug Fixes
+
+* change the building mode of the console transport to generate only one ([967e81c](https://github.com/vodyani/winston/commit/967e81cb9d791937c354118c1dcd27c7069dc3d5))
+
 ## [8.5.1](https://github.com/vodyani/winston/compare/v8.5.0...v8.5.1) (2022-08-31)
 
 
