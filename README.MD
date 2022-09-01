@@ -32,6 +32,8 @@ npm install @vodyani/winston
 |:-:|
 |[ChoGathK](https://github.com/chogathK)|
 
+![Alt](https://repobeats.axiom.co/api/embed/deb9a09bfbbcd1292e7ead406e55dd6e9ec5cb96.svg "Repobeats analytics image")
+
 ## License
 
 Vodyani winston is [MIT licensed](LICENSE).
