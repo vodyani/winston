@@ -1,3 +1,10 @@
+## [8.5.3](https://github.com/vodyani/winston/compare/v8.5.2...v8.5.3) (2022-08-31)
+
+
+### Bug Fixes
+
+* improved output style under console ([9a26c03](https://github.com/vodyani/winston/commit/9a26c03795d1baa6fc5494c699f24b4c999406eb))
+
 ## [8.5.2](https://github.com/vodyani/winston/compare/v8.5.1...v8.5.2) (2022-08-31)
 
 
