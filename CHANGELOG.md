@@ -1,3 +1,10 @@
+## [8.5.5](https://github.com/vodyani/winston/compare/v8.5.4...v8.5.5) (2022-09-08)
+
+
+### Bug Fixes
+
+* deps ([60727a2](https://github.com/vodyani/winston/commit/60727a2f05abb70066ae3c5ba295548d0c4acf1f))
+
 ## [8.5.4](https://github.com/vodyani/winston/compare/v8.5.3...v8.5.4) (2022-09-07)
 
 
