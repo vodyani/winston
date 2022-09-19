@@ -19,8 +19,8 @@ npm install @vodyani/winston
 
 ## Getting started
 
-- [使用文档 📚](https://vodyani.vercel.app/docs/advanced/winston)
-- [Documentation 📚](https://vodyani.vercel.app/en/docs/advanced/winston)
+- [使用文档 📚](https://vodyani.netlify.app/docs/advanced/winston)
+- [Documentation 📚](https://vodyani.netlify.app/en/docs/advanced/winston)
 
 ## Questions
 
