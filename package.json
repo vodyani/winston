@@ -61,7 +61,7 @@
     ]
   },
   "dependencies": {
-    "@vodyani/class-decorator": "^8.2.2",
+    "@vodyani/class-decorator": "^8.2.3",
     "@vodyani/utils": "^8.5.2",
     "winston": "3.8.1",
     "winston-daily-rotate-file": "4.6.1"
