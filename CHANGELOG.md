@@ -1,3 +1,10 @@
+# [8.6.0](https://github.com/vodyani/winston/compare/v8.5.5...v8.6.0) (2022-09-24)
+
+
+### Features
+
+* when output to the console, no extra data is printed ([29ed76f](https://github.com/vodyani/winston/commit/29ed76fc3db0ac942ea1e47e29709aaa163157fa))
+
 ## [8.5.5](https://github.com/vodyani/winston/compare/v8.5.4...v8.5.5) (2022-09-08)
 
 
