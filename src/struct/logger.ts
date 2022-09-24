@@ -31,12 +31,12 @@ export class Logger implements ILogger {
   }
 
   @This
-  public error(error: Error, extra?: any, source?: any) {
+  public error(error: Error, source?: any, extra?: any) {
     const data = {
-      extra: extra || '',
       name: error.name,
       message: error.message,
       stack: error.stack,
+      extra: extra || '',
     };
 
     this.instance.error({ data, source, isError: true });

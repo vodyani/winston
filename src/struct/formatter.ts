@@ -28,10 +28,6 @@ export class ConsoleLogFormatter implements ILoggerFormatter {
         output += `: ${message.data.message}`;
         output += `\n ${message.data.stack}}`;
 
-        if (message.data.extra) {
-          output += `\n \n Error Extra: ${JSON.stringify(message.data.extra)}`;
-        }
-
         return output;
       }
 
