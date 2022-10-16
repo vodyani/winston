@@ -2,7 +2,7 @@ import { resolve } from 'path';
 
 import { describe, it } from '@jest/globals';
 
-import { LoggerFactory } from '../src';
+import { ConsoleTransport, LoggerFactory } from '../src';
 
 describe('LoggerFactory', () => {
   const factory = new LoggerFactory();
@@ -59,10 +59,10 @@ describe('LoggerFactory', () => {
       handleRejections: true,
       mode: ['File', 'DailyRotateFile'],
       fileOptions: {
-        customFilename: (key: string) => `custom-logger-${key}.log`,
+        customFilename: (level: string) => `custom-logger-${level}.log`,
       },
       dailyRotateFileOptions: {
-        customFilename: (key: string) => `%DATE%-custom-logger-${key}.log`,
+        customFilename: (level: string) => `%DATE%-custom-logger-${level}.log`,
       },
     });
 
@@ -92,5 +92,19 @@ describe('LoggerFactory', () => {
 
     logger.log('log input');
     logger.error(error, 'log input');
+  });
+
+  it('handleExceptions logger', async () => {
+    const handler = new ConsoleTransport().build('custom-handleExceptions-logger', 'DEV', 'debug');
+
+    factory.create({
+      env: 'LOCAL',
+      handleExceptions: true,
+      handleRejections: true,
+      exceptionHandlers: [handler],
+      rejectionHandlers: [handler],
+      name: 'custom-handleExceptions-logger',
+      mode: ['File', 'DailyRotateFile'],
+    });
   });
 });

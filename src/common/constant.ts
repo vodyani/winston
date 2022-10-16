@@ -1,3 +1,6 @@
-import { LogLevelDict } from './interface';
+import { ILevelInfo } from './interface';
 
-export const defaultLevelDict: LogLevelDict = { error: 'error', access: 'debug' };
+export const defaultLevelInfos: ILevelInfo[] =  [
+  { level: 'debug', filename: 'access' },
+  { level: 'error', filename: 'error' },
+];

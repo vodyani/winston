@@ -12,22 +12,22 @@ export class Logger implements ILogger {
 
   @This
   public log(data: any, source?: string) {
-    this.instance.info({ data, source, isError: false });
+    this.instance.info({ data, source });
   }
 
   @This
   public info(data: any, source?: string) {
-    this.instance.info({ data, source, isError: false });
+    this.instance.info({ data, source });
   }
 
   @This
   public warn(data: any, source?: string) {
-    this.instance.warn({ data, source, isError: false });
+    this.instance.warn({ data, source });
   }
 
   @This
   public debug(data: any, source?: string) {
-    this.instance.debug({ data, source, isError: false });
+    this.instance.debug({ data, source });
   }
 
   @This

@@ -3,7 +3,7 @@ import { transports } from 'winston';
 
 import { DailyRotateFile, DailyRotateFileOptions, ILoggerTransport } from '../common';
 
-import { ConsoleLogFormatter, FileLogFormatter } from './formatter';
+import { ConsoleLogFormatter, FileLogFormatter } from './log-formatter';
 
 export class ConsoleTransport implements ILoggerTransport {
   public build(

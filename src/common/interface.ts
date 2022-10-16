@@ -20,30 +20,27 @@ export interface ILoggerTransport {
   build: (name: string, env: string, level: string, options?: Transport.TransportStreamOptions) => Transport;
 }
 
-export interface ILoggerOptionsBuilder {
-  build: (options: CreateOptions) => LogOptions;
-}
-
 export interface ILoggerFactory {
   create: (options: CreateOptions) => ILogger;
 }
 
-export interface LogLevelDict {
-  [key: string]: 'info' | 'debug' | 'warn' | 'error';
+export interface ILevelInfo {
+  filename: string;
+  level: 'info' | 'debug' | 'warn' | 'error';
 }
 
-export interface LogMessage {
+export interface ILogMessage {
   data: any;
   source?: string;
   isError: boolean;
 }
 
 export interface FileOptions extends Omit<transports.FileTransportOptions, 'level'> {
-  customFilename?: (fileKey: string) => string;
+  customFilename?: (level: string) => string;
 }
 
 export interface DailyRotateFileOptions extends Omit<GeneralDailyRotateFileTransportOptions, 'level'> {
-  customFilename?: (fileKey: string) => string;
+  customFilename?: (level: string) => string;
 }
 
 export interface CreateOptions extends LogOptions {
@@ -70,10 +67,10 @@ export interface CreateOptions extends LogOptions {
    *
    * @default
    * ```ts
-   *  { error: 'error', access: 'debug' };
+   *  [{ level: 'debug', filename: 'access' }, { level: 'error', filename: 'error' }];
    * ```
    */
-  levelDict?: LogLevelDict;
+  levelInfos?: ILevelInfo[];
   /**
    * Configuration options for exporting to the console.
    */

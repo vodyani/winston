@@ -2,7 +2,7 @@ import { format, Logform } from 'winston';
 import { isValidDict } from '@vodyani/utils';
 import { This } from '@vodyani/class-decorator';
 
-import { ILoggerFormatter, LogMessage } from '../common';
+import { ILoggerFormatter, ILogMessage } from '../common';
 
 export class ConsoleLogFormatter implements ILoggerFormatter {
   @This
@@ -20,7 +20,7 @@ export class ConsoleLogFormatter implements ILoggerFormatter {
     const label = `[${name}] - ${info.timestamp} [${env} ${process.pid}] ${level}`;
 
     if (isValidDict(info.message)) {
-      const message = (info.message as unknown as LogMessage);
+      const message = (info.message as unknown as ILogMessage);
 
       if (message.isError) {
         let output = `${label}`;
@@ -48,7 +48,7 @@ export class FileLogFormatter implements ILoggerFormatter {
   @This
   private format(name: string, env: string, info: Logform.TransformableInfo) {
     const level = info.level.toLocaleLowerCase();
-    const message = (info.message as unknown as LogMessage);
+    const message = (info.message as unknown as ILogMessage);
 
     return JSON.stringify({
       env,
