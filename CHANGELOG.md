@@ -1,3 +1,10 @@
+# [8.7.0](https://github.com/vodyani/winston/compare/v8.6.0...v8.7.0) (2022-10-16)
+
+
+### Features
+
+* optimized frame loading speed using new versions ([5579d14](https://github.com/vodyani/winston/commit/5579d141a03bb2ad6e2eb4bdf87f13ec53603f88))
+
 # [8.6.0](https://github.com/vodyani/winston/compare/v8.5.5...v8.6.0) (2022-09-24)
 
 
